@@ -1,9 +1,11 @@
 import React from 'react';
 
+
 function App() {
   return (
+    // JSX语法
     <div>
-     hello world!!
+     hello dell lijjoooo
     </div>
   );
 }

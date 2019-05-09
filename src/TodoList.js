@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './style.css'
 class Todolist extends React.Component {
 
   constructor(props) {
@@ -12,7 +12,7 @@ class Todolist extends React.Component {
   render() {
     return  (
       <div>
-        <div><input value={this.state.inputValue}  onChange={this.handleInputChange.bind(this)}/>
+        <div><input className='input' value={this.state.inputValue}  onChange={this.handleInputChange.bind(this)}/>
         <button onClick = {this.handleBtnChange.bind(this)}>提交</button></div>
         <ul>
         {
@@ -25,6 +25,9 @@ class Todolist extends React.Component {
     )
   }
   handleItemDelete(index){
+    // immutable语法
+    // state不允许我们做任何改变
+
     const list = [...this.state.list]
     list.splice(index, 1)
     this.setState({

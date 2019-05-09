@@ -17,17 +17,25 @@ class Todolist extends React.Component {
         <ul>
         {
           this.state.list.map((item, index)=> {
-            return <li key={index}>{item}</li>
+            return <li key={index}  onClick={this.handleItemDelete.bind(this, index)}>{item}</li>
           })
         }
         </ul>
       </div>
     )
   }
+  handleItemDelete(index){
+    const list = [...this.state.list]
+    list.splice(index, 1)
+    this.setState({
+      list: list
+    })
+  }
   handleBtnChange(e) {
     console.log('p')
     this.setState({
-      list: [...this.state.list, this.state.inputValue]
+      list: [...this.state.list, this.state.inputValue],
+      inputValue: ''
     })
     
   }

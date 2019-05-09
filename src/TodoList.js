@@ -8,7 +8,7 @@ class Todolist extends React.Component {
       inputValue: '',
       list: []
     }
-  }
+  } 
   render() {
     return  (
       <div>

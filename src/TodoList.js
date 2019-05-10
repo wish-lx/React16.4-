@@ -23,7 +23,9 @@ class Todolist extends React.Component {
 
 						return (
                 <div>
-										<TodoItem  content = {item}/>
+										<TodoItem  content = {item} 
+										index={index}
+										deleteItem = {this.handleItemDelete.bind(this)}/>
 								{/*  <li key={index}  onClick={this.handleItemDelete.bind(this, index)}
 								 dangerouslySetInnerHTML={{__html: item}}></li> */}
 								</div>

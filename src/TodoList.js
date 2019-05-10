@@ -19,7 +19,7 @@ class Todolist extends React.Component {
           this.state.list.map((item, index)=> {
             return <li key={index}  onClick={this.handleItemDelete.bind(this, index)}
             dangerouslySetInnerHTML={{__html: item}}></li>
-          }) 
+          })  
         }
         </ul> 
       </div>

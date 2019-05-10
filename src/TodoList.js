@@ -9,7 +9,7 @@ class Todolist extends React.Component {
       list: []
     }
   } 
-  render() {    
+  render() {       
     return  (
       <div>
         <div><input className='input' value={this.state.inputValue}  onChange={this.handleInputChange.bind(this)}/>

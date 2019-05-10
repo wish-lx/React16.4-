@@ -12,7 +12,9 @@ class Todolist extends React.Component {
   render() {       
     return  (
       <div>
-        <div><input className='input' value={this.state.inputValue}  onChange={this.handleInputChange.bind(this)}/>
+        <div>
+          <label htmlFor="interArea">输入内容</label>
+          <input id="interArea" className='input' value={this.state.inputValue}  onChange={this.handleInputChange.bind(this)}/>
         <button onClick = {this.handleBtnChange.bind(this)}>提交</button></div>
         <ul>
         {

@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoItem from './todoItem.js'
+import Text from './Text'
 import './style.css'
 
 class Todolist extends React.Component {
@@ -15,6 +16,7 @@ class Todolist extends React.Component {
 		this.handleBtnChange = this.handleBtnChange.bind(this)
 	}
 	render() {
+		console.log('render')
 		return (
 			<div>
 				<div>
@@ -26,6 +28,7 @@ class Todolist extends React.Component {
 						this.getTodoItem()
 					}
 				</ul>
+				<Text content={this.state.inputValue}></Text>
 			</div>
 		)
 	}

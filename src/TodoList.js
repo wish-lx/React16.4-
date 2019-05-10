@@ -21,7 +21,7 @@ class Todolist extends React.Component {
             dangerouslySetInnerHTML={{__html: item}}></li>
           })
         }
-        </ul>
+        </ul> 
       </div>
     )
   }

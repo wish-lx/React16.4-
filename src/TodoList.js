@@ -1,6 +1,6 @@
 import React from 'react';
 import TodoItem from './todoItem.js'
-import Text from './Text'
+// import Text from './Text'
 import './style.css'
 
 class Todolist extends React.Component {
@@ -28,14 +28,14 @@ class Todolist extends React.Component {
 						this.getTodoItem()
 					}
 				</ul>
-				<Text content={this.state.inputValue}></Text>
+				{/* <Text content={this.state.inputValue}></Text> */}
 			</div>
 		)
 	}
 	getTodoItem() {
 		return this.state.list.map((item, index) => {
 			return (
-				<div key={index}>
+				<div key={item}>
 					<TodoItem content={item}
 						index={index}
 						deleteItem={this.handleItemDelete.bind(this)} />

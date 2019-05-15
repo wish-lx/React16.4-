@@ -1,8 +1,34 @@
 .hide{
-    opacity: 0;
-    transition: all 1s  ease-in
+    animation: hide-item 2s  ease-in  forwards
 }
 .show{
-    opacity: 1;
-    transition: all 1s  ease-in
+    animation: show-item 2s  ease-in  forwards
+}
+@keyframes show-item{
+    0%{
+        opacity: 0;
+        background: pink
+    }
+    50%{
+        opacity: 0.5;
+        background: blue
+    }
+    100%{
+        opacity: 1;
+        background: green
+    }
+}
+@keyframes hide-item{
+    0%{
+        opacity: 1;
+        background: pink
+    }
+    50%{
+        opacity: 0.5;
+        background: blue
+    }
+    100%{
+        opacity: 0;
+        background: green
+    }
 }

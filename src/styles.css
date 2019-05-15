@@ -1,34 +1,22 @@
-.hide{
-    animation: hide-item 2s  ease-in  forwards
+.fade-enter{
+  opacity: 1
 }
-.show{
-    animation: show-item 2s  ease-in  forwards
+.fade-enter-active{
+  opacity:1;
+  transition: opacity 1s ease-in 
 }
-@keyframes show-item{
-    0%{
-        opacity: 0;
-        background: pink
-    }
-    50%{
-        opacity: 0.5;
-        background: blue
-    }
-    100%{
-        opacity: 1;
-        background: green
-    }
+.fade-enter-done{
+  opacity: 0;
+  color: red
 }
-@keyframes hide-item{
-    0%{
-        opacity: 1;
-        background: pink
-    }
-    50%{
-        opacity: 0.5;
-        background: blue
-    }
-    100%{
-        opacity: 0;
-        background: green
-    }
-}
+.fade-exit{
+    opacity: 0
+  }
+  .fade-exit-active{
+    opacity:0;
+    transition: opacity 1s ease-in 
+  }
+  .fade-exit-done{
+    opacity: 1;
+    color: pink
+  }

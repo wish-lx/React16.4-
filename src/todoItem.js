@@ -4,11 +4,17 @@ class TodoItem extends React.Component{
     constructor(props) {
         super(props)
         this.handleClick = this.handleClick.bind(this)
-    }
+		}
+		shouldComponentUpdate(nextProps, nextState){
+			if(nextProps.content !== this.props.content) {
+				return true
+			}else {
+				return false
+			}
+		}
     render() {
 				const {content} = this.props
-				const {text} = this.props
-        return <div onClick={this.handleClick}>{text}-{content}</div>
+        return <div onClick={this.handleClick}>{content}</div>
     }
     handleClick() {
         const {deleteItem,index} = this.props
@@ -18,12 +24,12 @@ class TodoItem extends React.Component{
 
 }
 TodoItem.propTypes = {
-	text: PropTypes.string.isRequired,
+	// text: PropTypes.string.isRequired,
 	content: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	deleteItem: PropTypes.func,
 	index: PropTypes.number
 }
-TodoItem.defaultProps = {
-	text: 'hello'
-}
+// TodoItem.defaultProps = {
+// 	text: 'hello'
+// }
 export default TodoItem 

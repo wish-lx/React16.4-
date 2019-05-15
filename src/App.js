@@ -17,6 +17,8 @@ class App extends React.Component{
             in={this.state.show}
             timeout={1000}
             classNames="fade"
+            onEntered={(el)=>{el.style.color = 'red'}}
+            appear={true}
             >
               <div>123</div>
             </CSSTransition>

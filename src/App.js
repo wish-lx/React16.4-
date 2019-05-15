@@ -26,7 +26,7 @@ class App extends React.Component{
                         > 
                          <div >{item}</div>
                      </CSSTransition>
-                    )
+                    ) 
                 })
             }
             </TransitionGroup>

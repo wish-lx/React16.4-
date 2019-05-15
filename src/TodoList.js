@@ -1,6 +1,6 @@
 import React from 'react';
 import TodoItem from './todoItem.js'
-// import Text from './Text'
+import axios from 'axios'
 import './style.css'
 
 class Todolist extends React.Component {
@@ -31,6 +31,19 @@ class Todolist extends React.Component {
 				{/* <Text content={this.state.inputValue}></Text> */}
 			</div>
 		)
+	}
+	componentDidMount(){
+	   axios.get('/api/todolist')
+	   .then((res)=>{
+		   console.log(res.data)
+		   this.setState(()=>{
+			   return {
+				   list: res.data
+			   }
+		   })
+	   }).catch(()=>{
+		   alert('error')
+	   })
 	}
 	getTodoItem() {
 		return this.state.list.map((item, index) => {

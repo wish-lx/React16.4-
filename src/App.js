@@ -22,7 +22,7 @@ class App extends React.Component{
                         classNames="fade"
                         onEntered={(el)=>{el.style.color = 'red'}}
                         appear={true}
-                        key={index}
+                        key={index} 
                         > 
                          <div >{item}</div>
                      </CSSTransition>

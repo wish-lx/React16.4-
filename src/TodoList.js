@@ -27,8 +27,8 @@ class todoList extends React.Component{
                <List
                 bordered
                 dataSource={this.state.list}
-                renderItem={item => (
-                    <List.Item> {item}</List.Item>
+                renderItem={(item, index) => (
+                    <List.Item onClick={this.delete.bind(this,index)}> {item}</List.Item>
                 )}
                 style={{width: 300}}/>
             </div>
@@ -50,6 +50,13 @@ class todoList extends React.Component{
     bClick() {
         const action = {
             type: 'add-item'
+        }
+        store.dispatch(action)
+    }
+    delete(index) {
+        const action = {
+            type: 'delete-item',
+            index
         }
         store.dispatch(action)
     }

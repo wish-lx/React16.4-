@@ -1,6 +1,6 @@
 const defaultState={
-    inputValue: '8',
-    list: [1,2,3]
+    inputValue: '',
+    list: []
 }
 export default (state = defaultState, action)=> {
     // 接收state，action
@@ -16,6 +16,12 @@ export default (state = defaultState, action)=> {
         const newState = JSON.parse(JSON.stringify(state))
         newState.list.push(newState.inputValue)
         newState.inputValue = ''
+        return newState
+    }
+    if(action.type === 'delete-item') { 
+        // 对原始数据进行深拷贝，并且将传入的 action 的值赋值，并return给组件
+        const newState = JSON.parse(JSON.stringify(state))
+        newState.list.splice(action.index, 1)
         return newState
     }
     return state

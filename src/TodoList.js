@@ -2,6 +2,7 @@ import React from 'react'
 import 'antd/dist/antd.css';
 import { Input, Button, List } from 'antd'
 import store from './store'
+import {TYPE_INPUT_VALUE, ADD_ITEM, DELETE_ITEM} from './store/actiontypes'
 
 class todoList extends React.Component{
      constructor(props){
@@ -38,7 +39,7 @@ class todoList extends React.Component{
     handleOnChange(e){
         // 创建action
         const action = {
-            type: 'type-input-value',
+            type: TYPE_INPUT_VALUE,
             value: e.target.value
         }
         // 传送给state
@@ -49,13 +50,13 @@ class todoList extends React.Component{
     }
     bClick() {
         const action = {
-            type: 'add-item'
+            type: ADD_ITEM
         }
         store.dispatch(action)
     }
     delete(index) {
         const action = {
-            type: 'delete-item',
+            type: DELETE_ITEM,
             index
         }
         store.dispatch(action)

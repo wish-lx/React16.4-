@@ -1,15 +1,13 @@
 import React from 'react'
 import 'antd/dist/antd.css';
 import { Input, Button, List } from 'antd'
-const data = [
-    'Racing car sprays burning fuel into crowd.',
-    'Japanese princess to wed commoner.',
-    'Australian walks 100km after outback crash.',
-    'Man charged over missing wedding girl.',
-    'Los Angeles battles huge wildfires.',
-  ]
+import store from './store'
+
 class todoList extends React.Component{
-   
+     constructor(props){
+         super(props);
+         console.log(store.getState())
+     }
     render(){
         return ( 
             <div style={{marginTop:'20px', marginLeft: '20px'}}>
@@ -17,7 +15,7 @@ class todoList extends React.Component{
                <Button type="primary">提交</Button>
                <List
                 bordered
-                dataSource={data}
+                dataSource={[]}
                 renderItem={item => (
                     <List.Item> {item}</List.Item>
                 )}

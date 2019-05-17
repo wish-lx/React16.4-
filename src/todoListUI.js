@@ -4,10 +4,10 @@ import { Input, Button, List} from 'antd'
 const TodoListUI = (props) => {
     return (
         <div style={{marginTop:'20px', marginLeft: '20px'}}>
-        <Input value={this.props.inputValue} 
+        <Input value={props.inputValue} 
         placeholder="Basic usage" 
         style={{width: 300,marginRight: 20}}
-        onChange={this.props.handleOnChange}
+        onChange={props.handleOnChange}
         />
         <Button type="primary" onClick={props.bClick}>提交</Button>
         <List

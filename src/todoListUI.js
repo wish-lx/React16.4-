@@ -14,7 +14,7 @@ class TodoListUI extends React.Component{
                 bordered
                 dataSource={this.props.list}
                 renderItem={(item, index) => ( 
-                    <List.Item onClick={(index)=>{this.props.delete(index)}}> {item}</List.Item>
+                    <List.Item onClick={()=>{this.props.delete(index)}}> {item}</List.Item>
                 )}
                 style={{width: 300}}/>
             </div>
